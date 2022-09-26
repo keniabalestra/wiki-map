@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
       .then(data => {
         const users = data.rows;
         console.log(data)
-        res.render('map_landing');
+        res.redirect('map_landing');
       })
       .catch(err => {
         res
