@@ -9,7 +9,7 @@ const express = require('express');
 const router  = express.Router();
 const userQueries = require('../db/queries/user_queries');
 const cookieSession = require('cookie-session');
-
+const db = require('../db/connection');
 
 //GET requests for index//
 
@@ -23,23 +23,29 @@ router.get('/', (req, res) => {
 
 //POST requests for index//
 
-// router.post('/', (req, res) => {
-//   // let emailLogin = req.body.email;
-//   // let passwordLogin = req.body.password;
-//   const query = `SELECT * FROM users`;
-//     console.log(query);
-//     db.query(query)
-//       .then(data => {
-//         const users = data.rows;
-//         console.log(data)
-//         res.json({ users });
-//       })
-//       .catch(err => {
-//         res
-//           .status(500)
-//           .json({ error: err.message });
-//       });
-//   });
+router.post('/', (req, res) => {
+  // let emailLogin = req.body.email;
+  // let passwordLogin = req.body.password;
+  const query = `SELECT * FROM users`;
+    console.log(query);
+    db.query(query)
+      .then(data => {
+        const users = data.rows;
+        console.log(data)
+        res.render('map_landing');
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
+
+
+
+
+
 
 
 //   //takes in the email and outputs the id attached to the email
