@@ -12,7 +12,7 @@ const cookieSession = require('cookie-session');
 const db = require('../db/connection');
 
 //GET requests for register//
-router.get('/', (req, res) => {
+router.get('/register', (req, res) => {
       res.render('register');
     });
 
