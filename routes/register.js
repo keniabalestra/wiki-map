@@ -34,3 +34,5 @@ router.get('/register', (req, res) => {
 //           .json({ error: err.message });
 //       });
 //   });
+
+module.exports = router
