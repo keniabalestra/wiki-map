@@ -11,15 +11,12 @@ const userQueries = require('../db/queries/user_queries');
 const cookieSession = require('cookie-session');
 
 
-
-
 //GET requests for index//
-
 
 router.get('/', (req, res) => {
   userQueries.getUsers()
     .then((users) => {
-      res.json(users);
+      res.render('index');
     })
 
 });
