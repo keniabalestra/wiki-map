@@ -20,22 +20,29 @@ router.get('/', (req, res) => {
 
 //POST requests for register //
 router.post('/', (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
   const user = req.body;
   const existingUser = helperQueries.getUserbyEmail(user);
   existingUser.then(users => {
 
-    if (!user.email || !user.password) {
-      return res.status(400).send(`400 error - Missing E-mail or Password`);
+    if (!email || !password) {
+      return res.status(400).send(`Please re-enter credentials. Both fields must be filled. Please <a href='/register'>try again.</a>`);
     }
     if (users.length > 0) {
-      return res.status(400).send(`400 error - You're alredy registered! Click here to login`); //add href
+      return res.send(`Sorry, we are unable to register your account. Please ensure the information is correct <a href='/register'>here.</a>`);
+
     } else {
       helperQueries.addUser(user);
       console.log("Adds new user");
 
       res.redirect('map_landing')
     }
-  })// .catch(err => {
+  })
+
+
+
+  // .catch(err => {
     //   res
     //     .status(500)
     //     .json({ error: err.message });

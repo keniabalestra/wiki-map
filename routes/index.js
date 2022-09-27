@@ -6,45 +6,41 @@
  */
 
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 const userQueries = require('../db/queries/user_queries');
 const cookieSession = require('cookie-session');
 const db = require('../db/connection');
 
 //GET requests for index//
-
 router.get('/', (req, res) => {
   userQueries.getUsers(db)
     .then((users) => {
       res.render('index');
-    })
-
-    req.session.userID = db[0].id
-    res.json(db[0])
+    });
 
 });
 
 //POST requests for index//
-
 router.post('/', (req, res) => {
-  let email = req.body.email;
-  
-  // let passwordLogin = req.body.password;
-  const query = `SELECT * FROM users WHERE email = $1`;
-    //console.log(query);
-    db.query(query, [email])
-      .then(data => {
-        const user = data.rows[0];
+  const email = req.body.email;
+  const password = req.body.password;
+  const query = `SELECT * FROM users WHERE email = $1 AND password = $2`;
+  console.log(query);
+  db.query(query, [email, password])
+    .then(data => {
+      if (!email || !password) {
+        return res.status(400).send(`Please re-enter credentials. Both fields must be filled. Please <a href='/index'>try again.</a>`);
+      }
 
-        req.session.id = user.id
-        res.redirect('map_landing');
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
-  });
+      const user = data.rows[0];
+      req.session.id = user.id;
+      res.redirect('map_landing');
+    })
+    .catch(err => res.send(`Sorry, we are unable to login your account. Please try again <a href='/index'>here.</a>`));
+
+});
+
+
 
 
 
