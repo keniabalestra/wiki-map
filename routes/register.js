@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
   const user = req.body;
   const existingUser = helperQueries.getUserbyEmail(user);
   existingUser.then(users => {
-    console.log('Users: ',users)
+
     if (!user.email || !user.password) {
       return res.status(400).send(`400 error - Missing E-mail or Password`);
     }
@@ -32,9 +32,14 @@ router.post('/', (req, res) => {
     } else {
       helperQueries.addUser(user);
       console.log("Adds new user");
+
       res.redirect('map_landing')
     }
-  });
+  })// .catch(err => {
+    //   res
+    //     .status(500)
+    //     .json({ error: err.message });
+  ;
 
 
   //if emailmatch is true, then error

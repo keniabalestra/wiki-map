@@ -27,14 +27,16 @@ router.get('/', (req, res) => {
 //POST requests for index//
 
 router.post('/', (req, res) => {
-  // let emailLogin = req.body.email;
+  let email = req.body.email;
+  
   // let passwordLogin = req.body.password;
-  const query = `SELECT * FROM users`;
-    console.log(query);
-    db.query(query)
+  const query = `SELECT * FROM users WHERE email = $1`;
+    //console.log(query);
+    db.query(query, [email])
       .then(data => {
-        const users = data.rows;
-        console.log(data)
+        const user = data.rows[0];
+
+        req.session.id = user.id
         res.redirect('map_landing');
       })
       .catch(err => {
