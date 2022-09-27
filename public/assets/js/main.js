@@ -264,4 +264,19 @@
     attribution: '© OpenStreetMap'
 }).addTo(map);
 
+const marker = L.marker([51.5, -0.07]).addTo(map);
+
+const marker1 = L.marker([51.3, -0.07]).addTo(map);
+
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+
+map.on('click', onMapClick);
+
 })()
