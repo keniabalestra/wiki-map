@@ -14,10 +14,13 @@ const db = require('../db/connection');
 //GET requests for index//
 
 router.get('/', (req, res) => {
-  userQueries.getUsers()
+  userQueries.getUsers(db)
     .then((users) => {
       res.render('index');
     })
+
+    req.session.userID = db[0].id
+    res.json(db[0])
 
 });
 
