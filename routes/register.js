@@ -6,51 +6,57 @@
  */
 
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 const userQueries = require('../db/queries/user_queries');
 const cookieSession = require('cookie-session');
 const db = require('../db/connection');
+const helperQueries = require('./helper_queries');
 
 //GET requests for register//
-router.get('/register', (req, res) => {
-      res.render('register');
-    });
+router.get('/', (req, res) => {
+  res.render('register');
+});
 
 
 //POST requests for register //
-    router.post('/', (req, res) => {
-      let emailLogin = req.body.email;
-      let passwordLogin = req.body.password;
+router.post('/', (req, res) => {
+  const user = req.body;
+  const existingUser = helperQueries.getUserbyEmail(user);
+  existingUser.then(users => {
+    console.log('Users: ',users)
+    if (!user.email || !user.password) {
+      return res.status(400).send(`400 error - Missing E-mail or Password`);
+    }
+    if (users.length > 0) {
+      return res.status(400).send(`400 error - You're alredy registered! Click here to login`); //add href
+    } else {
+      helperQueries.addUser(user);
+      console.log("Adds new user");
+      res.redirect('map_landing')
+    }
+  });
 
 
-      //if emailmatch is true, then error
-      if (emailLogin === users.email) {
-        return res.status(400).send(`400 error - No user found!`);
-      }
+  //if emailmatch is true, then error
+  // if (emailLogin === user.email) {
+  //   return res.status(400).send(`400 error - No user found!`);
+  // }
+  // //error handling, if user and pass are zero return error
+  // if (emailLogin.length === 0 && passwordLogin.length === 0) {
+  //   return res.status(400).send(`400 error - Missing E-mail or Password`);
+  // }
+  //     const users = data.rows;
+  //     console.log(data)
+  //     res.redirect('map_landing');
 
-      const query = `SELECT * FROM users`;
-      console.log(query);
-      db.query(query)
-      .then(data => {
-        //if emailmatch is true, then error
-        if (emailLogin === users.email) {
-          return res.status(400).send(`400 error - No user found!`);
-        }
-        //error handling, if user and pass are zero return error
-        if (emailLogin.length === 0 && passwordLogin.length === 0) {
-          return res.status(400).send(`400 error - Missing E-mail or Password`);
-        }
-            const users = data.rows;
-            console.log(data)
-            res.redirect('map_landing');
-          })
-          .catch(err => {
-            res
-              .status(500)
-              .json({ error: err.message });
-          });
-      });
+  // })
+  // .catch(err => {
+  //   res
+  //     .status(500)
+  //     .json({ error: err.message });
+
+});
 
 
 
-module.exports = router
+module.exports = router;
