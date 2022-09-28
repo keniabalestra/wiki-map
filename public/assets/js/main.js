@@ -340,32 +340,37 @@ marker.bindPopup("<b>Union</b><br>Locally sourced, kinda french, food focused. N
 
 
 // Montreal markers
-var marker = L.marker([45.5180529, -73.603119 ]).addTo(map2);
+var marker = L.marker([45.518052, -73.603119 ]).addTo(map2);
 marker.bindPopup("<b>Patati Patata</b><br>Sweet and petite.").openPopup();
 
 var marker = L.marker([45.520015, -73.56327]).addTo(map2);
 marker.bindPopup("<b>Le Mousso</b><br>Fancy Food").openPopup();
 
-var marker = L.marker([45.4964391, -75.7747612]).addTo(map2);
+var marker = L.marker([45.522150, -73.574421]).addTo(map2);
 marker.bindPopup("<b>Au Pied de Cochon</b><br>Rich French Canadian food.").openPopup();
 
-var marker = L.marker([45.531625622681, 73.617911922087]).addTo(map2);
+var marker = L.marker([45.531625, -73.617911]).addTo(map2);
 marker.bindPopup("<b>Depanneur Le Pick Up</b><br>Veggies Welcome.").openPopup();
 
-var marker = L.marker([45.4809248, -73.5788376]).addTo(map2);
+var marker = L.marker([45.480924, -73.578837]).addTo(map2);
 marker.bindPopup("<b>Green Spot</b><br>You may have left your one night stand, but Green will always be there for you.").openPopup();
 
 
+// Vancouver markers
+var marker = L.marker([45.518052, -73.603119 ]).addTo(map2);
+marker.bindPopup("<b>Patati Patata</b><br>Sweet and petite.").openPopup();
 
+var marker = L.marker([45.520015, -73.56327]).addTo(map2);
+marker.bindPopup("<b>Le Mousso</b><br>Fancy Food").openPopup();
 
-// var marker = L.marker([51.5, -0.09]).addTo(map3);
-// var marker = L.marker([51.5, -0.09]).addTo(map3);
-// var marker = L.marker([51.5, -0.09]).addTo(map3);
-// var marker = L.marker([51.5, -0.09]).addTo(map3);
-// var marker = L.marker([51.5, -0.09]).addTo(map3);
+var marker = L.marker([45.522150, -73.574421]).addTo(map2);
+marker.bindPopup("<b>Au Pied de Cochon</b><br>Rich French Canadian food.").openPopup();
 
+var marker = L.marker([45.531625, -73.617911]).addTo(map2);
+marker.bindPopup("<b>Depanneur Le Pick Up</b><br>Veggies Welcome.").openPopup();
 
-
+var marker = L.marker([45.480924, -73.578837]).addTo(map2);
+marker.bindPopup("<b>Green Spot</b><br>You may have left your one night stand, but Green will always be there for you.").openPopup();
 
 
 
