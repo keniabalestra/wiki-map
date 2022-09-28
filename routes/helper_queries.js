@@ -28,7 +28,7 @@ const getUserbyEmail = function(user) {
 exports.getUserbyEmail = getUserbyEmail;
 
 const getMapbyId = function(id) {
-  const queryString = `SELECT * FROM maps WHERE id = $1`;
+  const queryString = `SELECT * FROM maps WHERE id = $1;`;
   return db
     .query(queryString, [id])
     .then((response) => {
@@ -38,4 +38,37 @@ const getMapbyId = function(id) {
 };
 exports.getMapbyId = getMapbyId;
 
-//const getLocation
+///////////////////////////
+//Get USERS FAVORITE MAPS//
+//////////////////////////
+const getFavoriteMapsOfUser = (user_id) => {
+  console.log('user_id', user_id)
+
+  // const favsgrabber = `SELECT * FROM favourites WHERE user_id = $1;`;
+  // console.log(`SELECT * FROM favourites WHERE user_id = $1;`)
+    return db.query(`SELECT * FROM favourites WHERE user_id = $1`, [user_id])
+    .then((res) =>
+    // res.render('maps first three maps and users maps')
+    // console.log('favsdata', res);
+    console.log('response', res.rows[0])
+    )
+  }
+
+  exports.getFavoriteMapsOfUser = getFavoriteMapsOfUser;
+
+  ///////////////////////////
+//Get ALL COMMUNITY MAPS//
+//////////////////////////
+
+
+const getCommunityMaps = () => {
+
+    return db.query(`SELECT * FROM maps`)
+    .then((res) =>
+
+
+    console.log('response', res.rows)
+    )
+  }
+
+exports.getCommunityMaps = getCommunityMaps;

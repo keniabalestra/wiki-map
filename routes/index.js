@@ -10,6 +10,14 @@ const router = express.Router();
 const userQueries = require('../db/queries/user_queries');
 const cookieSession = require('cookie-session');
 const db = require('../db/connection');
+const helper_queries = require('./helper_queries');
+
+console.log('fav maps****************************************')
+helper_queries.getFavoriteMapsOfUser(2);
+console.log('com maps****************************************')
+helper_queries.getCommunityMaps();
+
+
 
 //GET requests for index//
 router.get('/', (req, res) => {
