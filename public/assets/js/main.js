@@ -292,34 +292,81 @@
   //   map.on('click', onMapClick);
   // }
 
-  var map = L.map('exampleModal1').setView([43.653, -79.383], 13);
+  var map = L.map('staticBackdrop1').setView([43.653, -79.383], 13);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap'
 }).addTo(map);
 
-$('#exampleModal1').on('shown.bs.modal', function() {
+$('#staticBackdrop1').on('shown.bs.modal', function() {
   map.invalidateSize();
 });
 
-var map2 = L.map('exampleModal2').setView([45.5019, -73.567], 13);
+var map2 = L.map('staticBackdrop2').setView([45.5019, -73.567], 13);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: '© OpenStreetMap'
 }).addTo(map2);
 
-$('#exampleModal2').on('shown.bs.modal', function() {
+$('#staticBackdrop2').on('shown.bs.modal', function() {
 map2.invalidateSize();
 });
 
-var map3 = L.map('exampleModal3').setView([49.2827, -123.120], 13);
+var map3 = L.map('staticBackdrop3').setView([49.2827, -123.120], 13);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: '© OpenStreetMap'
 }).addTo(map3);
 
-$('#exampleModal3').on('shown.bs.modal', function() {
+$('#staticBackdrop3').on('shown.bs.modal', function() {
 map3.invalidateSize();
 });
+
+// Toronto markers
+var marker = L.marker([43.6717134 , -79.3307205 ]).addTo(map);
+marker.bindPopup("<b>Mahas</b><br>Egyptian Brunch.").openPopup();
+
+var marker = L.marker([43.6790045, -79.4404215]).addTo(map);
+marker.bindPopup("<b>Khmer Thai</b><br>Cambodian family that makes the best food and wants to retire but the neighborhood wont let them!").openPopup();
+
+var marker = L.marker([43.6512158, -79.4090181]).addTo(map);
+marker.bindPopup("<b>Campacheno</b><br>Sweet little taco spot.").openPopup();
+
+var marker = L.marker([43.6717134, -79.3307205]).addTo(map);
+marker.bindPopup("<b>Rasta Pasta</b><br>Exactly what it sounds like.").openPopup();
+
+var marker = L.marker([43.6458179, -79.4217631]).addTo(map);
+marker.bindPopup("<b>Union</b><br>Locally sourced, kinda french, food focused. No music.").openPopup();
+
+
+// Montreal markers
+var marker = L.marker([45.5180529, -73.603119 ]).addTo(map2);
+marker.bindPopup("<b>Patati Patata</b><br>Sweet and petite.").openPopup();
+
+var marker = L.marker([45.520015, -73.56327]).addTo(map2);
+marker.bindPopup("<b>Le Mousso</b><br>Fancy Food").openPopup();
+
+var marker = L.marker([45.4964391, -75.7747612]).addTo(map2);
+marker.bindPopup("<b>Au Pied de Cochon</b><br>Rich French Canadian food.").openPopup();
+
+var marker = L.marker([45.531625622681, 73.617911922087]).addTo(map2);
+marker.bindPopup("<b>Depanneur Le Pick Up</b><br>Veggies Welcome.").openPopup();
+
+var marker = L.marker([45.4809248, -73.5788376]).addTo(map2);
+marker.bindPopup("<b>Green Spot</b><br>You may have left your one night stand, but Green will always be there for you.").openPopup();
+
+
+
+
+// var marker = L.marker([51.5, -0.09]).addTo(map3);
+// var marker = L.marker([51.5, -0.09]).addTo(map3);
+// var marker = L.marker([51.5, -0.09]).addTo(map3);
+// var marker = L.marker([51.5, -0.09]).addTo(map3);
+// var marker = L.marker([51.5, -0.09]).addTo(map3);
+
+
+
+
+
 
 })();
