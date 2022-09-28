@@ -259,37 +259,67 @@
   new PureCounter();
 
   //Top Map
-  const mapList = document.getElementsByClassName('map');
-  console.log(mapList);
-  for (let mapDiv of mapList) {
-    console.log(mapDiv)
-    const latitude = mapDiv.dataset.latitude;
-    const longitude = mapDiv.dataset.longitude;
-    const zoom = mapDiv.dataset.zoom;
-    console.log("latitude: ", latitude)
+  // const mapList = document.getElementsByClassName('map');
+  // console.log(mapList);
+  // for (let mapDiv of mapList) {
+  //   console.log(mapDiv)
+  //   const latitude = mapDiv.dataset.latitude;
+  //   const longitude = mapDiv.dataset.longitude;
+  //   const zoom = mapDiv.dataset.zoom;
+  //   console.log("latitude: ", latitude)
 
-    const mapID = document.getElementById(`${mapDiv.id}`)
+  //   const mapID = document.getElementById(`${mapDiv.id}`)
 
-    const map = L.map(mapID).setView([latitude, longitude], zoom);
-    console.log("mapDIV.id", mapDiv.id)
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '© OpenStreetMap'
-    }).addTo(map);
+  //   const map = L.map(mapID).setView([latitude, longitude], zoom);
+  //   console.log("mapDIV.id", mapDiv.id)
+  //   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //     maxZoom: 19,
+  //     attribution: '© OpenStreetMap'
+  //   }).addTo(map);
 
-    // const marker = L.marker([51.5, -0.07]).addTo(map);
-    // const marker1 = L.marker([51.3, -0.07]).addTo(map);
+  //   // const marker = L.marker([51.5, -0.07]).addTo(map);
+  //   // const marker1 = L.marker([51.3, -0.07]).addTo(map);
 
-    let popup = L.popup();
+  //   let popup = L.popup();
 
-    function onMapClick(e) {
-      popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
-    }
+  //   function onMapClick(e) {
+  //     popup
+  //       .setLatLng(e.latlng)
+  //       .setContent("You clicked the map at " + e.latlng.toString())
+  //       .openOn(map);
+  //   }
 
-    map.on('click', onMapClick);
-  }
+  //   map.on('click', onMapClick);
+  // }
+
+  var map = L.map('exampleModal1').setView([43.653, -79.383], 13);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+$('#exampleModal1').on('shown.bs.modal', function() {
+  map.invalidateSize();
+});
+
+var map2 = L.map('exampleModal2').setView([45.5019, -73.567], 13);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '© OpenStreetMap'
+}).addTo(map2);
+
+$('#exampleModal2').on('shown.bs.modal', function() {
+map2.invalidateSize();
+});
+
+var map3 = L.map('exampleModal3').setView([49.2827, -123.120], 13);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '© OpenStreetMap'
+}).addTo(map3);
+
+$('#exampleModal3').on('shown.bs.modal', function() {
+map3.invalidateSize();
+});
 
 })();

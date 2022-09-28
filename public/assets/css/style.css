@@ -9,8 +9,20 @@
 # General
 --------------------------------------------------------------*/
 
-#map {
+#toronto {
   height: 60em;
+}
+
+#montreal {
+  height: 60em;
+}
+
+#vancouver {
+  height: 60em;
+}
+
+.communityMaps {
+  justify-content: space-between;
 }
 
 body {
