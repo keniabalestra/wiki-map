@@ -84,6 +84,9 @@
           <div id="map"></div>
         </div>
 
+
+
+
         <div class="row" data-aos="fade-up">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
@@ -92,6 +95,21 @@
             </ul>
           </div>
         </div>
+      </div>
+
+       <% for(let map of maps) { %>
+        <div
+          id = <%=map.id%>
+         data-latitude= <%=map.latitude %>
+          data-longitude= <%=map.longitude%>
+          data-zoom= <%=map.zoom%>
+          class="map leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+        ></div>
+       <% } %>
+
+
+
+
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
@@ -107,7 +125,7 @@
           </div>
 
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
@@ -127,7 +145,7 @@
                 <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
 

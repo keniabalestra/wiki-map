@@ -22,20 +22,20 @@ const getUserbyEmail = function(user) {
     .query(queryString, [user.email])
     .then((response) => {
       return response.rows;
-    })
+    });
 };
 
 exports.getUserbyEmail = getUserbyEmail;
 
 const getMapbyId = function(id) {
-  const queryString= `SELECT * FROM maps WHERE id = $1`;
+  const queryString = `SELECT * FROM maps WHERE id = $1`;
   return db
-  .query(queryString, [id])
-  .then ((response)=>{
-    console.log(response.rows)
-    return response.rows;
-  })
-}
+    .query(queryString, [id])
+    .then((response) => {
+      console.log(response.rows);
+      return response.rows;
+    });
+};
 exports.getMapbyId = getMapbyId;
 
-const getLocation
+//const getLocation
