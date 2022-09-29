@@ -296,82 +296,119 @@
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap'
-}).addTo(map);
+  }).addTo(map);
 
-$('#staticBackdrop1').on('shown.bs.modal', function() {
-  map.invalidateSize();
-});
+  $('#staticBackdrop1').on('shown.bs.modal', function() {
+    map.invalidateSize();
+  });
 
-var map2 = L.map('staticBackdrop2').setView([45.5019, -73.567], 13);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '© OpenStreetMap'
-}).addTo(map2);
+  var map2 = L.map('staticBackdrop2').setView([45.5019, -73.567], 13);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map2);
 
-$('#staticBackdrop2').on('shown.bs.modal', function() {
-map2.invalidateSize();
-});
+  $('#staticBackdrop2').on('shown.bs.modal', function() {
+    map2.invalidateSize();
+  });
 
-var map3 = L.map('staticBackdrop3').setView([49.2827, -123.120], 13);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '© OpenStreetMap'
-}).addTo(map3);
+  var map3 = L.map('staticBackdrop3').setView([49.2827, -123.120], 13);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map3);
 
-$('#staticBackdrop3').on('shown.bs.modal', function() {
-map3.invalidateSize();
-});
+  $('#staticBackdrop3').on('shown.bs.modal', function() {
+    map3.invalidateSize();
+  });
 
-// Toronto markers
-var marker = L.marker([43.6717134 , -79.3307205 ]).addTo(map);
-marker.bindPopup("<b>Mahas</b><br>Egyptian Brunch.").openPopup();
+  // Toronto markers
+  var marker = L.marker([43.6717134, -79.3307205]).addTo(map);
+  marker.bindPopup("<b>Mahas</b><br>Egyptian Brunch.").openPopup();
 
-var marker = L.marker([43.6790045, -79.4404215]).addTo(map);
-marker.bindPopup("<b>Khmer Thai</b><br>Cambodian family that makes the best food and wants to retire but the neighborhood wont let them!").openPopup();
+  var marker = L.marker([43.6790045, -79.4404215]).addTo(map);
+  marker.bindPopup("<b>Khmer Thai</b><br>Cambodian family that makes the best food and wants to retire but the neighborhood wont let them!").openPopup();
 
-var marker = L.marker([43.6512158, -79.4090181]).addTo(map);
-marker.bindPopup("<b>Campacheno</b><br>Sweet little taco spot.").openPopup();
+  var marker = L.marker([43.6512158, -79.4090181]).addTo(map);
+  marker.bindPopup("<b>Campacheno</b><br>Sweet little taco spot.").openPopup();
 
-var marker = L.marker([43.6717134, -79.3307205]).addTo(map);
-marker.bindPopup("<b>Rasta Pasta</b><br>Exactly what it sounds like.").openPopup();
+  var marker = L.marker([43.6717134, -79.3307205]).addTo(map);
+  marker.bindPopup("<b>Rasta Pasta</b><br>Exactly what it sounds like.").openPopup();
 
-var marker = L.marker([43.6458179, -79.4217631]).addTo(map);
-marker.bindPopup("<b>Union</b><br>Locally sourced, kinda french, food focused. No music.").openPopup();
-
-
-// Montreal markers
-var marker = L.marker([45.518052, -73.603119 ]).addTo(map2);
-marker.bindPopup("<b>Patati Patata</b><br>Sweet and petite.").openPopup();
-
-var marker = L.marker([45.520015, -73.56327]).addTo(map2);
-marker.bindPopup("<b>Le Mousso</b><br>Fancy Food").openPopup();
-
-var marker = L.marker([45.522150, -73.574421]).addTo(map2);
-marker.bindPopup("<b>Au Pied de Cochon</b><br>Rich French Canadian food.").openPopup();
-
-var marker = L.marker([45.531625, -73.617911]).addTo(map2);
-marker.bindPopup("<b>Depanneur Le Pick Up</b><br>Veggies Welcome.").openPopup();
-
-var marker = L.marker([45.480924, -73.578837]).addTo(map2);
-marker.bindPopup("<b>Green Spot</b><br>You may have left your one night stand, but Green will always be there for you.").openPopup();
+  var marker = L.marker([43.6458179, -79.4217631]).addTo(map);
+  marker.bindPopup("<b>Union</b><br>Locally sourced, kinda french, food focused. No music.").openPopup();
 
 
-// Vancouver markers
-var marker = L.marker([49.2343187, -123.1547549 ]).addTo(map3);
-marker.bindPopup("<b>Pho Tan</b><br>The peanut butter pho will change your life.").openPopup();
+  // Montreal markers
+  var marker = L.marker([45.518052, -73.603119]).addTo(map2);
+  marker.bindPopup("<b>Patati Patata</b><br>Sweet and petite.").openPopup();
 
-var marker = L.marker([49.28235513364814, -123.10461096249956]).addTo(map3);
-marker.bindPopup("<b>De Beppe</b><br>Fun place for Italian any time of the day.").openPopup();
+  var marker = L.marker([45.520015, -73.56327]).addTo(map2);
+  marker.bindPopup("<b>Le Mousso</b><br>Fancy Food").openPopup();
 
-var marker = L.marker([49.282727677215156, -123.10482015266828]).addTo(map3);
-marker.bindPopup("<b>Tacofino</b><br>I mean, its not as good as it from the truck on the island, but still...").openPopup();
+  var marker = L.marker([45.522150, -73.574421]).addTo(map2);
+  marker.bindPopup("<b>Au Pied de Cochon</b><br>Rich French Canadian food.").openPopup();
 
-var marker = L.marker([49.28311945376058, -123.10402649149965]).addTo(map3);
-marker.bindPopup("<b>The Diamond</b><br>Every once in awhile olive martinis count as dinner. With gin, duh.").openPopup();
+  var marker = L.marker([45.531625, -73.617911]).addTo(map2);
+  marker.bindPopup("<b>Depanneur Le Pick Up</b><br>Veggies Welcome.").openPopup();
 
-var marker = L.marker([49.26813202099821, -123.16704412084904]).addTo(map3);
-marker.bindPopup("<b>The Naam</b><br>Once youve realized you shouldnt have had martinis for dinner and realize you are in Vancouver and everywhere else to eat closed 3 hours ago... then you realize life aint so bad.").openPopup();
+  var marker = L.marker([45.480924, -73.578837]).addTo(map2);
+  marker.bindPopup("<b>Green Spot</b><br>You may have left your one night stand, but Green will always be there for you.").openPopup();
+
+
+  // Vancouver markers
+  var marker = L.marker([49.2343187, -123.1547549]).addTo(map3);
+  marker.bindPopup("<b>Pho Tan</b><br>The peanut butter pho will change your life.").openPopup();
+
+  var marker = L.marker([49.28235513364814, -123.10461096249956]).addTo(map3);
+  marker.bindPopup("<b>De Beppe</b><br>Fun place for Italian any time of the day.").openPopup();
+
+  var marker = L.marker([49.282727677215156, -123.10482015266828]).addTo(map3);
+  marker.bindPopup("<b>Tacofino</b><br>I mean, its not as good as it from the truck on the island, but still...").openPopup();
+
+  var marker = L.marker([49.28311945376058, -123.10402649149965]).addTo(map3);
+  marker.bindPopup("<b>The Diamond</b><br>Every once in awhile olive martinis count as dinner. With gin, duh.").openPopup();
+
+  var marker = L.marker([49.26813202099821, -123.16704412084904]).addTo(map3);
+  marker.bindPopup("<b>The Naam</b><br>Once youve realized you shouldnt have had martinis for dinner and realize you are in Vancouver and everywhere else to eat closed 3 hours ago... then you realize life aint so bad.").openPopup();
 
 
 
 })();
+
+
+// const createNewMap = (mapObj) => {
+//   let $newMap = $(`
+
+// <div
+//   class="modal fade"
+//   id="staticBackdrop3"
+//   data-bs-backdrop="static"
+//   data-bs-keyboard="false"
+//   tabindex="-1"
+//   aria-labelledby="staticBackdropLabel"
+//   aria-hidden="true"
+// >
+//   <div class="modal-dialog modal-fullscreen">
+//     <div class="modal-content">
+//       <div class="modal-header">
+//         <h5 class="modal-title" id="staticBackdropLabel">
+//           Modal title
+//         </h5>
+//         <button
+//           type="button"
+//           class="btn-close"
+//           data-bs-dismiss="modal"
+//           aria-label="Close"
+//         ></button>
+//       </div>
+//       <div class="modal-body">
+//         <div id=${/***map chosen by user mapObj.id? */} ></div>
+//       </div>
+//     </div>
+//   </div>
+// </div>`);
+
+//   return $newMap;
+// };
+
