@@ -357,20 +357,20 @@ marker.bindPopup("<b>Green Spot</b><br>You may have left your one night stand, b
 
 
 // Vancouver markers
-var marker = L.marker([45.518052, -73.603119 ]).addTo(map2);
-marker.bindPopup("<b>Patati Patata</b><br>Sweet and petite.").openPopup();
+var marker = L.marker([49.2343187, -123.1547549 ]).addTo(map3);
+marker.bindPopup("<b>Pho Tan</b><br>The peanut butter pho will change your life.").openPopup();
 
-var marker = L.marker([45.520015, -73.56327]).addTo(map2);
-marker.bindPopup("<b>Le Mousso</b><br>Fancy Food").openPopup();
+var marker = L.marker([49.28235513364814, -123.10461096249956]).addTo(map3);
+marker.bindPopup("<b>De Beppe</b><br>Fun place for Italian any time of the day.").openPopup();
 
-var marker = L.marker([45.522150, -73.574421]).addTo(map2);
-marker.bindPopup("<b>Au Pied de Cochon</b><br>Rich French Canadian food.").openPopup();
+var marker = L.marker([49.282727677215156, -123.10482015266828]).addTo(map3);
+marker.bindPopup("<b>Tacofino</b><br>I mean, its not as good as it from the truck on the island, but still...").openPopup();
 
-var marker = L.marker([45.531625, -73.617911]).addTo(map2);
-marker.bindPopup("<b>Depanneur Le Pick Up</b><br>Veggies Welcome.").openPopup();
+var marker = L.marker([49.28311945376058, -123.10402649149965]).addTo(map3);
+marker.bindPopup("<b>The Diamond</b><br>Every once in awhile olive martinis count as dinner. With gin, duh.").openPopup();
 
-var marker = L.marker([45.480924, -73.578837]).addTo(map2);
-marker.bindPopup("<b>Green Spot</b><br>You may have left your one night stand, but Green will always be there for you.").openPopup();
+var marker = L.marker([49.26813202099821, -123.16704412084904]).addTo(map3);
+marker.bindPopup("<b>The Naam</b><br>Once youve realized you shouldnt have had martinis for dinner and realize you are in Vancouver and everywhere else to eat closed 3 hours ago... then you realize life aint so bad.").openPopup();
 
 
 
