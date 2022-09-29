@@ -12,10 +12,10 @@ const cookieSession = require('cookie-session');
 const db = require('../db/connection');
 const helper_queries = require('./helper_queries');
 
-console.log('fav maps****************************************')
-helper_queries.getFavoriteMapsOfUser(2);
-console.log('com maps****************************************')
-helper_queries.getCommunityMaps();
+// console.log('fav maps****************************************')
+// helper_queries.getFavoriteMapsOfUser(2);
+// console.log('com maps****************************************')
+// helper_queries.getCommunityMaps();
 
 
 
@@ -33,7 +33,6 @@ router.post('/', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const query = `SELECT * FROM users WHERE email = $1 AND password = $2`;
-  console.log(query);
   db.query(query, [email, password])
     .then(data => {
       if (!email || !password) {

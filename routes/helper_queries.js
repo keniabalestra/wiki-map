@@ -32,7 +32,6 @@ const getMapbyId = function(id) {
   return db
     .query(queryString, [id])
     .then((response) => {
-      console.log(response.rows);
       return response.rows;
     });
 };
@@ -42,33 +41,23 @@ exports.getMapbyId = getMapbyId;
 //Get USERS FAVORITE MAPS//
 //////////////////////////
 const getFavoriteMapsOfUser = (user_id) => {
-  console.log('user_id', user_id)
+  return db.query(`SELECT * FROM favourites WHERE user_id = $1`, [user_id])
+    .then((res) => res.rows[0]);
+};
 
-  // const favsgrabber = `SELECT * FROM favourites WHERE user_id = $1;`;
-  // console.log(`SELECT * FROM favourites WHERE user_id = $1;`)
-    return db.query(`SELECT * FROM favourites WHERE user_id = $1`, [user_id])
-    .then((res) =>
-    // res.render('maps first three maps and users maps')
-    // console.log('favsdata', res);
-    console.log('response', res.rows[0])
-    )
-  }
+exports.getFavoriteMapsOfUser = getFavoriteMapsOfUser;
 
-  exports.getFavoriteMapsOfUser = getFavoriteMapsOfUser;
-
-  ///////////////////////////
+///////////////////////////
 //Get ALL COMMUNITY MAPS//
 //////////////////////////
-
-
 const getCommunityMaps = () => {
-
-    return db.query(`SELECT * FROM maps`)
-    .then((res) =>
-
-
-    console.log('response', res.rows)
-    )
-  }
+  return db.query(`SELECT * FROM maps`)
+    .then((res) => res.rows);
+};
 
 exports.getCommunityMaps = getCommunityMaps;
+
+///////////////////////////
+//Get FAVE MAPS BY USER_ID//
+//////////////////////////
+

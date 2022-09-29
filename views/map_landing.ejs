@@ -110,6 +110,8 @@
         <div class="container">
           <div class="section-title">
             <h2>Maps</h2>
+
+
             <div id="map"></div>
           </div>
 
@@ -123,14 +125,7 @@
           </div>
         </div>
 
-
-
-
-
-
-
         <div class="communityMaps">
-          <!-- TORONTO Modal -->
 
           <!-- Toronto Modal -->
           <div
@@ -161,103 +156,10 @@
               </div>
             </div>
           </div>
-
-          <!-- TORONTO PORTFOLIO -->
-          <div
-            class="row portfolio-container"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/toronto.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <!-- Button trigger modal -->
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop1"
-                  >
-                    Launch static backdrop modal
-                  </button>
-                  <a href="portfolio-details.html" title="More Details"
-                    ><i class="bx bx-link"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-
             <!-- Montreal Modal -->
             <div
-              class="modal fade"
-              id="staticBackdrop2"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false"
-              tabindex="-1"
-              aria-labelledby="staticBackdropLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-fullscreen">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">
-                      Modal title
-                    </h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <div id="toronto"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Montreal PORTFOLIO -->
-          <div
-            class="row portfolio-container"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/montreal.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-links">
-                  <!-- Button trigger modal -->
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop2"
-                  >
-                    Launch static backdrop modal
-                  </button>
-                  <a href="portfolio-details.html" title="More Details"
-                    ><i class="bx bx-link"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Vancouver Modal -->
-          <div
             class="modal fade"
-            id="staticBackdrop3"
+            id="staticBackdrop2"
             data-bs-backdrop="static"
             data-bs-keyboard="false"
             tabindex="-1"
@@ -284,13 +186,92 @@
             </div>
           </div>
 
-          <!-- Vancouver PORTFOLIO -->
+           <!-- Vancouver Modal -->
+           <div
+           class="modal fade"
+           id="staticBackdrop3"
+           data-bs-backdrop="static"
+           data-bs-keyboard="false"
+           tabindex="-1"
+           aria-labelledby="staticBackdropLabel"
+           aria-hidden="true"
+         >
+           <div class="modal-dialog modal-fullscreen">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <h5 class="modal-title" id="staticBackdropLabel">
+                   Modal title
+                 </h5>
+                 <button
+                 type="button"
+                 class="btn-close"
+                 data-bs-dismiss="modal"
+                 aria-label="Close"
+               ></button>
+               </div>
+               <div class="modal-body">
+                 <div id="toronto"></div>
+               </div>
+             </div>
+           </div>
+         </div>
+
+          <!-- MAPS PORTFOLIO -->
           <div
             class="row portfolio-container"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <!--Toronto Portifolio-->
+            <div class="col-lg-4 col-md-4 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/toronto.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <!-- Button trigger modal -->
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop1"
+                  >
+                    Launch static backdrop modal
+                  </button>
+                  <a href="portfolio-details.html" title="More Details"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!--Montreal Portfolio-->
+            <div class="col-lg-4 col-md-4 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img
+                  src="assets/img/portfolio/montreal.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="portfolio-links">
+                  <!-- Button trigger modal -->
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop2"
+                  >
+                    Launch static backdrop modal
+                  </button>
+                  <a href="portfolio-details.html" title="More Details"
+                    ><i class="bx bx-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!--Vancouver Portifolio-->
+            <div class="col-lg-4 col-md-4 portfolio-item filter-app">
               <div class="portfolio-wrap">
                 <img
                   src="assets/img/portfolio/vancouver.jpg"
@@ -313,7 +294,6 @@
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </section>
       <!-- End Portfolio Section -->
