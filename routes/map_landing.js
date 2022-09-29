@@ -16,10 +16,8 @@ const user = req.session.id
 
 router.get('/map_fav', (req, res) => {
   const user_id = req.session.id
-  console.log("user: ", user_id)
   helper_queries.getFavoriteMapsOfUser(user_id)
     .then(favourites => {
-      console.log("favourites: ", favourites)
       res.json({ favourites });
 
     })

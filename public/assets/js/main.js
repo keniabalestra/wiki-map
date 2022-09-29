@@ -294,7 +294,7 @@
   //   map.on('click', onMapClick);
   // }
 
-  var map = L.map('staticBackdrop1').setView([43.653, -79.383], 13);
+  const map = L.map('staticBackdrop1').setView([43.653, -79.383], 13);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap'
@@ -304,7 +304,7 @@
     map.invalidateSize();
   });
 
-  var map2 = L.map('staticBackdrop2').setView([45.5019, -73.567], 13);
+  const map2 = L.map('staticBackdrop2').setView([45.5019, -73.567], 13);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap'
@@ -314,7 +314,7 @@
     map2.invalidateSize();
   });
 
-  var map3 = L.map('staticBackdrop3').setView([49.2827, -123.120], 13);
+  const map3 = L.map('staticBackdrop3').setView([49.2827, -123.120], 13);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap'
@@ -378,7 +378,7 @@ $("#favourite-btn").on('click', function(event){
   console.log("TEST")
   $.get('/map_landing/map_fav')
     .then((data) => {
-      console.log(data)
+      console.log("data",data)
       //renderTweets(data);
       //console.log("Success: ", renderTweets);
     });
