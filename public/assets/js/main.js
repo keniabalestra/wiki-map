@@ -294,86 +294,134 @@
   //   map.on('click', onMapClick);
   // }
 
+    //add an event listener for the form(step1)
+//   $('#display-form').on('click', click)
+//   //this is basis of the new tweet we are generating
+// const displayMarkerForm = function (display) {
+//   const markerForm =
+
+//   $(document).ready(function(){
+//     $('button.btn-view-details').on('click', function () {
+//         $('#').modal('show');
+//     })
+
+//     `<!-- Modal -->
+//   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+//     <div class="modal-dialog">
+//       <div class="modal-content">
+//         <div class="modal-header">
+//           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+//           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+//         </div>
+//         <div class="modal-body">
+//           <form>
+
+//             <label for="markerName" class="form-label">Please enter a location name: </label>
+//             <input type="text" class="form-control"/>
+
+//             <label for="markerDescription" class="form-label">Please enter a location description: </label>
+//             <input type="text" class="form-control"/>
+
+//             <div class="modal-footer">
+//               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+//               <button type="button" class="btn btn-primary">Save changes</button>
+//             </div>
+
+//           </form>
+//         </div>
+//       </div>
+//     </div>
+//   </div>`
+// }
+
+//   $(document).ready(function(){
+//     $('button.btn-view-details').on('click', function () {
+//         $('#commonModal').modal('show');
+//     })
+// })
 
 //fixes render issues with maps on modals
-  const map = L.map('staticBackdrop1').setView([43.653, -79.383], 13);
-  const map2 = L.map('staticBackdrop2').setView([43.653, -79.383], 13);
-  const map3 = L.map('staticBackdrop3').setView([43.653, -79.383], 13);
-  // const modalbtn = document.getElementById('toggleMyModal')
+const map = L.map('staticBackdrop1').setView([43.653, -79.383], 13);
+const map2 = L.map('staticBackdrop2').setView([43.653, -79.383], 13);
+const map3 = L.map('staticBackdrop3').setView([43.653, -79.383], 13);
+// const modalbtn = document.getElementById('toggleMyModal')
 
 //Drop map markers, log long and lat TORONTO
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap'
-  }).addTo(map);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map);
 
-  $('#staticBackdrop1').on('shown.bs.modal', function() {
-    map.invalidateSize();
-  });
-
-  var popup = L.popup();
-
-  map.on("click", function(e){
-    var mp = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(map);
-    alert(mp.getLatLng());
-    console.log("user right-clicked on map coordinates: " + e.latlng.toString());
+$('#staticBackdrop1').on('shown.bs.modal', function() {
+  map.invalidateSize();
 });
+
+var popup = L.popup();
+
+map.on("click", function(e){
+  var mp = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+  $('#exampleModal').modal('show')
+  console.log("user right-clicked on map coordinates: " + e.latlng.toString());
+});
+
+
+  // do something
 
 //Drop map markers, log long and lat MONTREAL
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap'
+attribution: '© OpenStreetMap'
 }).addTo(map2);
 
 $('#staticBackdrop2').on('shown.bs.modal', function() {
-  map2.invalidateSize();
+map2.invalidateSize();
 });
 
 var popup = L.popup();
 
 map2.on("click", function(e){
-  var mp = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(map2);
-  alert(mp.getLatLng());
-  console.log("user right-clicked on map coordinates: " + e.latlng.toString());
+var mp = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(map2);
+$('#exampleModal2').modal('show')
+console.log("user right-clicked on map coordinates: " + e.latlng.toString());
 });
 
 //Drop map markers, log long and lat VANCOUVER
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap'
+attribution: '© OpenStreetMap'
 }).addTo(map3);
 
 $('#staticBackdrop3').on('shown.bs.modal', function() {
-  map3.invalidateSize();
+map3.invalidateSize();
 });
 
 var popup = L.popup();
 
 map3.on("click", function(e){
-  var mp = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(map3);
-  alert(mp.getLatLng());
-  console.log("user right-clicked on map coordinates: " + e.latlng.toString());
+var mp = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(map3);
+$('#exampleModal3').modal('show')
+console.log("user right-clicked on map coordinates: " + e.latlng.toString());
 });
 
 
-  // var map2 = L.map('staticBackdrop2').setView([45.5019, -73.567], 13);
-  // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  //   maxZoom: 19,
-  //   attribution: '© OpenStreetMap'
-  // }).addTo(map2);
+// var map2 = L.map('staticBackdrop2').setView([45.5019, -73.567], 13);
+// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//   maxZoom: 19,
+//   attribution: '© OpenStreetMap'
+// }).addTo(map2);
 
-  // $('#staticBackdrop2').on('shown.bs.modal', function() {
-  //   map2.invalidateSize();
-  // });
+// $('#staticBackdrop2').on('shown.bs.modal', function() {
+//   map2.invalidateSize();
+// });
 
-  // var map3 = L.map('staticBackdrop3').setView([49.2827, -123.120], 13);
-  // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  //   maxZoom: 19,
-  //   attribution: '© OpenStreetMap'
-  // }).addTo(map3);
+// var map3 = L.map('staticBackdrop3').setView([49.2827, -123.120], 13);
+// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//   maxZoom: 19,
+//   attribution: '© OpenStreetMap'
+// }).addTo(map3);
 
-  // $('#staticBackdrop3').on('shown.bs.modal', function() {
-  //   map3.invalidateSize();
-  // });
+// $('#staticBackdrop3').on('shown.bs.modal', function() {
+//   map3.invalidateSize();
+// });
 
-  // Toronto markers
+// Toronto markers
   var marker = L.marker([43.6717134, -79.3307205]).addTo(map);
   marker.bindPopup("<b>Mahas</b><br>Egyptian Brunch.").openPopup();
 
@@ -428,9 +476,9 @@ $("#favourite-btn").on('click', function(event){
   $.get('/map_landing/map_fav')
     .then((data) => {
       console.log("data",data)
-
+      //renderTweets(data);
+      //console.log("Success: ", renderTweets);
     });
-
 } )
 
 

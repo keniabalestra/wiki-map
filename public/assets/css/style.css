@@ -1180,3 +1180,13 @@ section {
     padding-right: 20px 15px;
   }
 }
+
+.modal-content {
+  margin-left: 20%;
+  margin-bottom: 100px;
+}
+
+.modal-backdrop {
+  width: 0vh;
+  height: 0vh;
+}
