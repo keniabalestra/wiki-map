@@ -294,9 +294,15 @@
   //   map.on('click', onMapClick);
   // }
 
+
+//fixes render issues with maps on modals
   const map = L.map('staticBackdrop1').setView([43.653, -79.383], 13);
+  const map2 = L.map('staticBackdrop2').setView([43.653, -79.383], 13);
+  const map3 = L.map('staticBackdrop3').setView([43.653, -79.383], 13);
+  // const modalbtn = document.getElementById('toggleMyModal')
+
+//Drop map markers, log long and lat TORONTO
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
     attribution: '© OpenStreetMap'
   }).addTo(map);
 
@@ -304,25 +310,68 @@
     map.invalidateSize();
   });
 
-  const map2 = L.map('staticBackdrop2').setView([45.5019, -73.567], 13);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap'
-  }).addTo(map2);
+  var popup = L.popup();
 
-  $('#staticBackdrop2').on('shown.bs.modal', function() {
-    map2.invalidateSize();
-  });
+  map.on("click", function(e){
+    var mp = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+    alert(mp.getLatLng());
+    console.log("user right-clicked on map coordinates: " + e.latlng.toString());
+});
 
-  const map3 = L.map('staticBackdrop3').setView([49.2827, -123.120], 13);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap'
-  }).addTo(map3);
+//Drop map markers, log long and lat MONTREAL
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map2);
 
-  $('#staticBackdrop3').on('shown.bs.modal', function() {
-    map3.invalidateSize();
-  });
+$('#staticBackdrop2').on('shown.bs.modal', function() {
+  map2.invalidateSize();
+});
+
+var popup = L.popup();
+
+map2.on("click", function(e){
+  var mp = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(map2);
+  alert(mp.getLatLng());
+  console.log("user right-clicked on map coordinates: " + e.latlng.toString());
+});
+
+//Drop map markers, log long and lat VANCOUVER
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map3);
+
+$('#staticBackdrop3').on('shown.bs.modal', function() {
+  map3.invalidateSize();
+});
+
+var popup = L.popup();
+
+map3.on("click", function(e){
+  var mp = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(map3);
+  alert(mp.getLatLng());
+  console.log("user right-clicked on map coordinates: " + e.latlng.toString());
+});
+
+
+  // var map2 = L.map('staticBackdrop2').setView([45.5019, -73.567], 13);
+  // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //   maxZoom: 19,
+  //   attribution: '© OpenStreetMap'
+  // }).addTo(map2);
+
+  // $('#staticBackdrop2').on('shown.bs.modal', function() {
+  //   map2.invalidateSize();
+  // });
+
+  // var map3 = L.map('staticBackdrop3').setView([49.2827, -123.120], 13);
+  // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //   maxZoom: 19,
+  //   attribution: '© OpenStreetMap'
+  // }).addTo(map3);
+
+  // $('#staticBackdrop3').on('shown.bs.modal', function() {
+  //   map3.invalidateSize();
+  // });
 
   // Toronto markers
   var marker = L.marker([43.6717134, -79.3307205]).addTo(map);
