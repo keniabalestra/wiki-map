@@ -15,3 +15,23 @@ $(() => {
     });
   });
 });
+
+
+
+
+const renderTweets = (tweets) => {
+
+  $('#tweets-container').empty();
+  for (let tweet of tweets) {
+    const $tweet = createTweetElement(tweet);
+    $('#tweets-container').prepend($tweet);
+  }
+};
+
+const loadTweets = () => {
+  $.get("/tweets")
+    .then((data) => {
+      renderTweets(data);
+      //console.log("Success: ", renderTweets);
+    });
+};

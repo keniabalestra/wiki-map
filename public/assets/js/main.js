@@ -379,9 +379,9 @@ $("#favourite-btn").on('click', function(event){
   $.get('/map_landing/map_fav')
     .then((data) => {
       console.log("data",data)
-      //renderTweets(data);
-      //console.log("Success: ", renderTweets);
+
     });
+
 } )
 
 
