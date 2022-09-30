@@ -258,6 +258,8 @@
    */
   new PureCounter();
 
+
+
   //Top Map
   // const mapList = document.getElementsByClassName('map');
   // console.log(mapList);
@@ -291,7 +293,6 @@
 
   //   map.on('click', onMapClick);
   // }
-
 
 
 //fixes render issues with maps on modals
@@ -422,9 +423,29 @@ map3.on("click", function(e){
   var marker = L.marker([49.26813202099821, -123.16704412084904]).addTo(map3);
   marker.bindPopup("<b>The Naam</b><br>Once youve realized you shouldnt have had martinis for dinner and realize you are in Vancouver and everywhere else to eat closed 3 hours ago... then you realize life aint so bad.").openPopup();
 
+$("#favourite-btn").on('click', function(event){
+  console.log("TEST")
+  $.get('/map_landing/map_fav')
+    .then((data) => {
+      console.log("data",data)
+      //renderTweets(data);
+      //console.log("Success: ", renderTweets);
+    });
+} )
+
+
+
+
+
+
+
 
 
 })();
+
+
+
+
 
 
 // const createNewMap = (mapObj) => {

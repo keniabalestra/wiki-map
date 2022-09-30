@@ -40,9 +40,16 @@ exports.getMapbyId = getMapbyId;
 ///////////////////////////
 //Get USERS FAVORITE MAPS//
 //////////////////////////
+//)
+
 const getFavoriteMapsOfUser = (user_id) => {
   return db.query(`SELECT * FROM favourites WHERE user_id = $1`, [user_id])
-    .then((res) => res.rows[0]);
+    .then((res) => {
+      console.log("res: ", res)
+      console.log("user_id", user_id)
+      //console.log(db)
+      return res.rows
+    });
 };
 
 exports.getFavoriteMapsOfUser = getFavoriteMapsOfUser;

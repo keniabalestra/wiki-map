@@ -14,16 +14,46 @@ const user = req.session.id
     });
 });
 
+router.get('/map_fav', (req, res) => {
+  const user_id = req.session.id
+  helper_queries.getFavoriteMapsOfUser(user_id)
+    .then(favourites => {
+      res.json({ favourites });
 
-// router.get('/', (req,res) => {
-// const user= req.session
-// console.log("USER ID: ", user)
-// helper_queries.getFavoriteMapsOfUser(user.id)
-// .then((favourites) => {
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
 
-// }
+
+
+// $(document).ready (function (){
+
 
 // })
+//   const renderTweets = (tweets) => {
+
+//     $('#tweets-container').empty();
+//     for (let tweet of tweets) {
+//       const $tweet = createTweetElement(tweet);
+//       $('#tweets-container').prepend($tweet);
+//     }
+//   };
+
+//   const loadTweets = () => {
+//     $.get("/tweets")
+//       .then((data) => {
+//         renderTweets(data);
+//         //console.log("Success: ", renderTweets);
+//       });
+//   };
+
+
+
+
 
 
 //Creates new Map
